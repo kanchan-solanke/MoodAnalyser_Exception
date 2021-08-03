@@ -1,24 +1,17 @@
-public class MoodAnalyser
-{
-    public String message;
-
-    public MoodAnalyser(String msg)
-    {
-        message = msg;
+public class MoodAnalyser {
+    private String message;
+    public MoodAnalyser(String message) {
+        this.message = message;
     }
 
-    public String analyseMood() throws MoodAnalyserException
-    {
-        try
-        {
-            if (message.contains("SAD"))
+    public String analyseMood() {
+        try {
+            if (message.contains("Sad"))
                 return "SAD";
             else
-                return "Happy";
-        } catch (Exception e)
-        {
-            throw new MoodAnalyserException("Enter Message");
+                return "HAPPY";
+        }catch (NullPointerException e){
+            return "HAPPY";
         }
-
     }
 }

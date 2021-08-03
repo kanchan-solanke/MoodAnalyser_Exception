@@ -2,17 +2,14 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class MoodAnalyserTest {
-     @Test
-        public void givenMessage_WhenSad_ShouldReturnSad() {
-            MoodAnalyser moodAnalyser = new MoodAnalyser("I am in SAD Mood");
-            String mood = null;
-            try {
-                mood = moodAnalyser.analyseMood();
-            } catch (MoodAnalyserException e) {
-                e.printStackTrace();
-            }
-            Assertions.assertEquals("SAD", mood);
-        }
 
+
+    private Assertions Assert;
+
+    @Test
+    public void givenMessage_WhenNotSad_ShouldReturn_Happy() {
+        MoodAnalyser moodAnalyzer = new MoodAnalyser("This is Happy Messgae");
+        String mood = moodAnalyzer.analyseMood();
+        Assert.assertEquals("HAPPY", mood);
     }
-
+}
