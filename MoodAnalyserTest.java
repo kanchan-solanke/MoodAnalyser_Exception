@@ -1,30 +1,25 @@
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+package org.example;
+
+import junit.framework.TestCase;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class MoodAnalyserTest {
-
-
-    private Assertions Assert;
+    private Assert Assertions;
 
     @Test
-    public void givenMessgae_WhenSad_ShouldReturn_Sad() {
-        MoodAnalyser moodAnalyzer = new MoodAnalyser("This is a Sad Message");
-        String mood = moodAnalyzer.analyseMood();
-        Assert.assertEquals("SAD",mood);
-
+    public  void givenMessage_WhenSad_ShouldReturnSad()
+    {
+        MoodAnalyser moodAnalyser = new MoodAnalyser();
+        String mood = moodAnalyser.analyseMood("This is a Sad Message");
+        Assertions.assertEquals("SAD", mood);
     }
-
     @Test
-    public void givenMessage_WhenNotSad_ShouldReturn_Happy() {
-        MoodAnalyser moodAnalyzer = new MoodAnalyser("This is Happy Messgae");
-        String mood = moodAnalyzer.analyseMood();
-        Assert.assertEquals("HAPPY",mood);
-    }
+    public  void givenMessage_WhenNotSad_ShouldReturnHappy()
+    {
+        MoodAnalyser moodAnalyser = new MoodAnalyser();
+        String mood = moodAnalyser.analyseMood("This is a Happy Message");
+        Assertions.assertEquals("Happy", mood);
 
-    @Test
-    public void givenNullMood_ShouldReturn_Happy() {
-        MoodAnalyser moodAnalyzer = new MoodAnalyser(null);
-        String mood = moodAnalyzer.analyseMood();
-        Assert.assertEquals("HAPPY",mood);
     }
 }
