@@ -7,9 +7,9 @@ public class MoodAnalyserTest {
     private Assertions Assert;
 
     @Test
-    public void givenMessage_WhenNotSad_ShouldReturn_Happy() {
-        MoodAnalyser moodAnalyzer = new MoodAnalyser("This is Happy Messgae");
-        String mood = moodAnalyzer.analyseMood();
-        Assert.assertEquals("HAPPY", mood);
+    public void givenNullMood_ShouldReturn_Happy() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+        String mood = moodAnalyser.analyseMood();
+        Assert.assertEquals("HAPPY",mood);
     }
 }
